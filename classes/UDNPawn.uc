@@ -75,7 +75,7 @@ defaultproperties
 	ControllerClass=class'Tomato.TomatoBot'
 	bCanStrafe=false
 	MaxStepHeight=50.0
-	MaxJumpHeight=96
+	MaxJumpHeight=500
 	JumpZ=550
    CamOffsetDistance=0.0
 }
