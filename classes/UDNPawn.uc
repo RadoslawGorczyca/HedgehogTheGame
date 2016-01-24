@@ -1,7 +1,7 @@
 class UDNPawn extends UTPawn;
 
 var float CamOffsetDistance; //Position on Y-axis to lock camera to
-
+var bool game_start;
 //override to make player mesh visible by default
 simulated event BecomeViewTarget( PlayerController PC )
 {
@@ -58,24 +58,31 @@ simulated singular event Rotator GetBaseAimRotation()
 
 simulated function Tick(float DeltaTime)
 {
-	local vector tmpLocation;
-	super.Tick(DeltaTime);
-	tmpLocation = Location;
-	tmpLocation.Y = 500;
-	SetLocation(tmpLocation);
+    local vector tmpLocation;
+    tmpLocation = Location;
+    if(game_start)
+    {
+ 
+     game_start=false;
+    // tmpLocation.X = 13360;
+    }
+    super.Tick(DeltaTime);
+    tmpLocation.Y = 500;
+    SetLocation(tmpLocation);
 }
 
 function bool Dodge(eDoubleClickDir DoubleClickMove)
 {
-	return false;
+    return false;
 }
 
 defaultproperties
 {
-	ControllerClass=class'Tomato.TomatoBot'
-	bCanStrafe=false
-	MaxStepHeight=50.0
-	MaxJumpHeight=500
-	JumpZ=550
+    game_start=true;
+    ControllerClass=class'Tomato.TomatoBot'
+    bCanStrafe=false
+    MaxStepHeight=50.0
+    MaxJumpHeight=500
+    JumpZ=550
    CamOffsetDistance=0.0
 }

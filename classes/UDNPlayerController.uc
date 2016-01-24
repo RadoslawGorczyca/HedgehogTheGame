@@ -1,5 +1,10 @@
 class UDNPlayerController extends UTPlayerController;
 
+Reliable Client Function ClientSetHUD(Class<Hud> NewHudType)
+{
+    Super.ClientSetHUD(Class'HudFix');
+}
+
 state PlayerWalking
 {
 ignores SeePlayer, HearNoise, Bump;
