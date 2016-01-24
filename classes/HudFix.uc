@@ -103,5 +103,5 @@ DefaultProperties
     Pickup="pickup";
     base_number_of_pickups=0;
     pickups_counter=0;
-    timer = 420;
+    timer = 600;
 }
